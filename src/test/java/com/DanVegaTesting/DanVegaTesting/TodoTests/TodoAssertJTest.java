@@ -2,6 +2,7 @@ package com.DanVegaTesting.DanVegaTesting.TodoTests;
 
 import com.DanVegaTesting.DanVegaTesting.todo.CustomObjectDto;
 import com.DanVegaTesting.DanVegaTesting.todo.TodoRecord;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,6 +12,7 @@ public class TodoAssertJTest {
     void shouldCreateNewTodo(){
         TodoRecord recordOne = new TodoRecord("Cody",true);
         TodoRecord recordTwo = new TodoRecord("Cody",true);
+        Assertions.
         assertThat(recordTwo.name())
                 .startsWith("C")
                 .isEqualTo("Cody");

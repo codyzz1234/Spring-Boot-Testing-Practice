@@ -12,11 +12,11 @@ public class DanVegaTestingApplication {
 		SpringApplication.run(DanVegaTestingApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(){
-		return args -> {
-			System.out.println("Something went wrong");
-			throw new RuntimeException("Error Something went wrong");
-		};
-	}
+//	@Bean
+//	public CommandLineRunner commandLineRunner(){
+//		return args -> {
+//			System.out.println("Something went wrong");
+//			throw new RuntimeException("Error Something went wrong");
+//		};
+//	}
 }
