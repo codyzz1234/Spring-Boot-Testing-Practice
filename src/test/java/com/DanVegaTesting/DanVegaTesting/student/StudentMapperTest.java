@@ -1,15 +1,15 @@
 package com.DanVegaTesting.DanVegaTesting.student;
 
+import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+@Slf4j
 class StudentMapperTest {
     private StudentMapper studentMapper;
 
@@ -47,5 +47,14 @@ class StudentMapperTest {
         List<String> listTwo = List.of("Yap","Cody");
         Assertions.assertThat(listOne)
                 .containsExactlyInAnyOrder(listTwo.toArray(new String[0]));
+    }
+
+    //Should throw null pointer exception when dto is null. In this case, a null is passed to the mapper,
+    // so it is throwing a null pointer exception
+    @Test
+    void shouldThrowNullPointerWhenStudentDtoIsNull(){
+        var message = assertThatThrownBy( () ->{
+            Student student = studentMapper.dtoToStudent(null);
+        }).isInstanceOf(NullPointerException.class);
     }
 }

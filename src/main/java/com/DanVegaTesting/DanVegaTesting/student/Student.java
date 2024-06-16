@@ -28,6 +28,17 @@ public class Student {
     public Student(StudentDto studentDto) {
         this.id = studentDto.getId();
         this.studentName = studentDto.getStudentName();
+        this.schoolName = studentDto.getSchoolName();
     }
 
+    public Student(String studentName, String schoolName) {
+        this.studentName = studentName;
+        this.schoolName = schoolName;
+    }
+
+    public Student(Long id, String studentName, String schoolName) {
+        this.id = id;
+        this.studentName = studentName;
+        this.schoolName = schoolName;
+    }
 }

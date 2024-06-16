@@ -8,7 +8,6 @@ import lombok.Setter;
 public class StudentDto {
     private Long id;
     private String studentName;
-
     private String schoolName;
 
     public StudentDto(Student student) {
@@ -19,5 +18,17 @@ public class StudentDto {
     public StudentDto(Long id, String studentName) {
         this.id = id;
         this.studentName = studentName;
+    }
+
+    public StudentDto(String studentName, String schoolName) {
+        this.id = id;
+        this.studentName = studentName;
+        this.schoolName = schoolName;
+    }
+
+    public StudentDto(Long id, String studentName, String schoolName) {
+        this.id = id;
+        this.studentName = studentName;
+        this.schoolName = schoolName;
     }
 }

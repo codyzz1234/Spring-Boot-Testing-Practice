@@ -10,6 +10,9 @@ public class StudentMapper {
         return new StudentDto(student);
     }
     Student dtoToStudent(StudentDto studentDto) {
+        if(studentDto == null){
+            throw new NullPointerException("Student Dto Cannot be null");
+        }
         return new Student(studentDto);
     }
 }
